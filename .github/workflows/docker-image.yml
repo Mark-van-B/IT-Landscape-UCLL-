@@ -23,8 +23,8 @@ jobs:
         password: ${{ secrets.SECRET_KEY_IT_LANDSCAPE }} # See guide on making this key on GitHub. Too many steps to write in here...
         
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ghcr.io/Mark-van-B/getting-started-app:$(date +%s) ##This adds the date to the logs.
-                                                                    # replace the above with the name of your own app!
+      run: docker build . --file Dockerfile --tag ghcr.io/mark-van-b/getting-started-app:$(date +%s) ##This adds the date to the logs.
+                                                #  Name in lowercase/Replace the above with the name of your own app
 
     - name: Push the Docker image
-      run: docker push ghcr.io/Mark-van-B/getting-started-app:${{ github.sha }} #This basically adds a unique value to every push, for logging purposes.
+      run: docker push ghcr.io/mark-van-b/getting-started-app:${{ github.sha }} #This basically adds a unique value to every push, for logging purposes.
